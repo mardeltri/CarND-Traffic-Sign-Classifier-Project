@@ -11,6 +11,7 @@
 [image7]: ./images/OriginalDataset_Valid.png "Visualization"
 [image8]: ./images/mysigns.png "Google maps Traffic Signs"
 [image9]: ./images/grayscale.png "Grayscale"
+[image10]: ./images/predictions.png "Softmax values"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -119,45 +120,34 @@ It can be observed that the model works very well with the test accuracy with 95
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are five German traffic signs that I captured from Google Maps:
 
 ![alt text][image8]
 
-The first image might be difficult to classify because ...
+There are two images which may be difficult to identify: the third and the fifth one. As for the former, the perspective is pronounced, and, as for the latter, there is another sign below it, so it may confuse the neural network.
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
-
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Priority road   		| Priority road									| 
+| Yield	    			| Yield											|
+| General caution		| General caution								|
+| Ahead only     		| Ahead only					 				|
+| Go straight or right 	| Go straight or right 							|
+| Keep left			 	| Keep left										|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 6 of the 6 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 95%. Note that the images are shown clearly, this is, they are not in a shadow as some of the pictures included in the dataset. Thus, they are identified with a high probability as explained below.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 32th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+Below the probabilities corresponding with each image are shown:
+![alt text][image10]
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+All of them have a very good level of accuracy. The last case is more difficult to identify since it is quite rotated in comparison with the signs of the dataset.
 
 
